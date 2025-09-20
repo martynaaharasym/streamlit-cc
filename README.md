@@ -29,7 +29,12 @@ Three synthetic datasets are provided under `data/`:
 git clone https://github.com/YOUR_USERNAME/streamlit-cc.git
 cd streamlit-cc
 pip install -r requirements.txt
-streamlit run app/streamlit_app.py```
-
+streamlit run app/streamlit_app.py
+```
 Open the app at http://localhost:8501.
 
+The code below runs unit tests on the dataset loaders and connected components algorithm.
+
+```bash
+pytest -q
+```
