@@ -35,6 +35,11 @@ Open the app at http://localhost:8501.
 
 The code below runs unit tests on the dataset loaders and connected components algorithm.
 
+Troubleshooting: If you see “Python in worker has different version …”, ensure you activated the venv and that we set PYSPARK_PYTHON/PYSPARK_DRIVER_PYTHON to the current interpreter (already handled in tests/conftest.py and in the app).
+
+
 ```bash
+python -c "import sys; print(sys.version)"
+python -c "import pyspark, sys; print('PySpark', pyspark.__version__, 'Python', sys.executable)"
 pytest -q
 ```

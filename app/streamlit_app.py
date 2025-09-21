@@ -1,4 +1,9 @@
 # app/streamlit_app.py
+
+import os, sys
+os.environ["PYSPARK_PYTHON"] = sys.executable
+os.environ["PYSPARK_DRIVER_PYTHON"] = sys.executable
+
 import time
 from pathlib import Path
 import gzip
