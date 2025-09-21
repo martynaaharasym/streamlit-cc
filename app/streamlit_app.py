@@ -126,8 +126,6 @@ A connected component in an **undirected graph** is a set of nodes where each no
 3. Repeats until all nodes in the same connected component share the same label.  
 4. Returns a mapping: **node → component ID**.
 
-This is essentially a label-propagation style algorithm implemented with **Spark transformations** (no GraphFrames library required).
-
 ---
 
 ### Why is this useful?
@@ -143,12 +141,12 @@ Understanding components is a fundamental step in graph analysis.
 - Select one of the three bundled datasets from the sidebar.  
 - Click **Run connected components** to process the graph with Spark.  
 - The app will display:
-  - The number of edges and nodes loaded.  
-  - Sample rows of the edge list.  
-  - Iteration progress until convergence.  
-  - The number of connected components detected.  
-  - A preview of the mapping (node → component).  
-  - Option to download the full mapping as CSV (for small/medium graphs).  
+  - The number of edges and nodes loaded  
+  - Sample rows of the edge list
+  - Iteration progress until convergence  
+  - The number of connected components detected  
+  - A preview of the mapping (node → component)  
+  - Option to download the full mapping as CSV  
 
 ---
 """)
@@ -199,9 +197,3 @@ if st.button("Run connected components"):
             except Exception as e:
                 st.info("Dataset seems large; skipping auto CSV conversion.")
                 st.exception(e)
-
-st.caption(
-    "- Runs Spark in local mode (`local[*]`).\n"
-    "- Put your `.txt.gz` edge list files into the `data/` folder.\n"
-    "- For large graphs consider GraphFrames / built-in CC."
-)
